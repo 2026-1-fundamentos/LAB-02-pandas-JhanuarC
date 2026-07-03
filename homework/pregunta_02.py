@@ -1,4 +1,6 @@
 import pandas as pd 
+
+from pathlib import Path
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
 datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
@@ -15,5 +17,5 @@ def pregunta_02():
     4
 
     """
-    df = pd.read_csv("files\\input\\tbl0.tsv" , sep="\t")
+    df = pd.read_csv(Path(__file__).parent.parent / "files" / "input" / "tbl0.tsv" , sep="\t")
     return df.shape[1]
