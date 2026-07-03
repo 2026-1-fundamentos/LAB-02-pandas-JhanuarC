@@ -1,3 +1,4 @@
+import pandas as pd
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
 datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
@@ -20,3 +21,6 @@ def pregunta_05():
     E    9
     Name: c2, dtype: int64
     """
+    df = pd.read_csv("files\\input\\tbl0.tsv", sep = "\t")
+    df = df.groupby("c1")["c2"].max()
+    return df 

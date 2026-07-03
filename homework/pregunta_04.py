@@ -1,3 +1,5 @@
+
+import pandas as pd 
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
 datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
@@ -20,3 +22,7 @@ def pregunta_04():
     E    4.785714
     Name: c2, dtype: float64
     """
+    df = pd.read_csv("files\\input\\tbl0.tsv", sep = "\t")
+    df = df.groupby("c1")["c2"].mean()
+    return df 
+
